@@ -81,4 +81,26 @@ src/
 
 ## 📄 License
 
-This project is for educational and guidance purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## 📞 Contact
+
+For questions or feedback, please open an issue on GitHub.
+
+## 🚀 Deployment
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+The production build will be created in the `dist` folder, ready to be deployed to any static hosting service like Vercel, Netlify, or GitHub Pages.
