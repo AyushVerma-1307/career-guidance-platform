@@ -3,15 +3,19 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import styles from './OptionCard.module.css';
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+};
+
 const OptionCard = ({ optionKey, option, isSelected, onSelect }) => {
     return (
         <motion.div
             className={`${styles.card} ${isSelected ? styles.selected : ''}`}
             onClick={() => onSelect(optionKey)}
+            variants={cardVariants}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
         >
             <div className={styles.content}>

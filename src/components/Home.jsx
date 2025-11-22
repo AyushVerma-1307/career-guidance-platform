@@ -31,7 +31,7 @@ function Home({ onSelectCareer, selectedCareer, setSelectedCareer }) {
         // Scroll to bottom to show new step
         setTimeout(() => {
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        }, 100);
+        }, 300);
     };
 
     // Expose reset functionality if needed via ref or context, 

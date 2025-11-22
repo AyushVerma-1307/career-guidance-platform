@@ -3,16 +3,29 @@ import { motion } from 'framer-motion';
 import OptionCard from './OptionCard';
 import styles from './GraphNode.module.css';
 
+const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            staggerChildren: 0.1
+        }
+    },
+    exit: { opacity: 0, y: -20 }
+};
+
 const GraphNode = ({ node, selectedOption, onSelect }) => {
     if (!node) return null;
 
     return (
         <motion.div
             className={styles.nodeContainer}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
         >
             <div className={styles.questionBox}>
                 <h2 className={styles.question}>{node.question}</h2>
@@ -24,7 +37,7 @@ const GraphNode = ({ node, selectedOption, onSelect }) => {
                         key={key}
                         optionKey={key}
                         option={{
-                            label: option.label || key, // Fallback for yes/no if label missing in some structure
+                            label: option.label || key,
                             ...option
                         }}
                         isSelected={selectedOption === key}
