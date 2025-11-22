@@ -1,0 +1,67 @@
+.card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    min-width: 280px;
+    flex: 1;
+    box-shadow: var(--shadow);
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+    border-color: var(--primary-color);
+    background: #EEF2FF;
+    /* Indigo 50 */
+}
+
+.selected .title {
+    color: var(--primary-color);
+}
+
+.selected .icon {
+    color: var(--primary-color);
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.description {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.icon {
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
